@@ -49,7 +49,7 @@ async def on_message(message):
         namestr = re.sub("[\[\]]",'',namestr) #trim brackets off the string.
 
         await message.channel.send(wiki + namestr) #Posts the wiki link into the chat
-        print(f'{discord.user.name} called for {wiki+namestr}') #sends a message into the shell to say that it posted a wiki link into the chat
+        print(f'{discord.message.author} called for {wiki+namestr}') #sends a message into the shell to say that it posted a wiki link into the chat
 
 client.run(token)
 
