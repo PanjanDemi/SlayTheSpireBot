@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('token')
+print(f'Loaded Token')
 #restricting access to the token. Just make ur own .env lol
 
 # This bot is pretty normal. it just grabs words wrapped in [[]] and posts the wiki link to the page
@@ -13,6 +14,7 @@ token = os.getenv('token')
 
 intents = discord.Intents.default()
 intents.message_content = True #Defining bot intents. Bot can't connect to discord if it doesn't have the right intents, so this needs to be done.
+print(f'Loaded Intents')
 
 client = discord.Client(intents=intents) # connecting to discord.
 
