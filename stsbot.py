@@ -5,7 +5,7 @@ import time
 
 ## <    Variables   >
 deleteTime = 3
-embedTime = 3
+embedTime = 5
 ##
 
 from dotenv import load_dotenv
@@ -36,10 +36,10 @@ async def on_message(message):
     if message.author == client.user:
         apology = "Sorry, I couldn't find a wiki page with that name"
         time.sleep(embedTime)
-        if ((not(message.embeds)) & (message.content != apology)):
-            print(f'Failed to embed') 
-            await message.delete() #If the message does not embed, delete it
-            await message.channel.send(apology)
+        if ((not(message.embeds)) & (message.content != apology)): 
+            # await message.delete() #If the message does not embed, delete it
+            print(f'Failed to embed')
+            #await message.channel.send(apology)
         elif (message.content == apology):
             time.sleep(deleteTime)
             await message.delete()
